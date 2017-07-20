@@ -41,3 +41,7 @@ RUN chown -R $NB_USER:users /home/aqua/.local && \
 
 # default user starts the container
 USER $NB_USER
+# Create a data directory to be use as volume
+RUN mkdir $HOME/data
+# Create a data
+ENV DATA $HOME/data
