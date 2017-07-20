@@ -1,7 +1,7 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
-# docker run -i -t -p 8888:8888  -v $(pwd):/home/aqua/workspace/notebooks aquabiota/notebook-r jupyter notebook --ip='*' --port=8888  --no-browser
+# docker run -i -t -p 8888:8888 --name jupyter -v $(pwd):/home/aqua/workspace/notebooks aquabiota/notebook-r jupyter notebook --ip='*' --port=8888  --no-browser
 # docker run -i -t -p 8888:8888   aquabiota/notebook-r jupyter notebook  --ip='*' --port=8888  --no-browser
 # docker run -d -v $HOME/data:/home/aqua/data -v $(pwd):/home/aqua/workspace/notebooks --name jupyter -p 8889:8889 aquabiota/notebook-r jupyter notebook --ip='*' --port=8889  --no-browser
 
@@ -35,7 +35,8 @@ RUN chmod +x /sbin/rpackages.R
 RUN /sbin/rpackages.R
 
 # Ensure writing access to user to following dirs
-RUN chown -R $NB_USER:users $HOME.local && \
+
+RUN chown -R $NB_USER:users $HOME/.local && \
     chown -R $NB_USER:users $HOME/R-site-library && \
     # /usr/local/lib/R/site-library
     chown -R $NB_USER:users /usr/local/lib/R/site-library
