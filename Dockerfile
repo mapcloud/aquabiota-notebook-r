@@ -3,6 +3,7 @@
 
 # docker run -i -t -p 8888:8888 --name jupyter -v $(pwd):/home/aqua/workspace/notebooks aquabiota/notebook-r jupyter notebook --ip='*' --port=8888  --no-browser
 # docker run -i -t -p 8888:8888   aquabiota/notebook-r jupyter notebook  --ip='*' --port=8888  --no-browser
+# docker run -d -v $HOME/data:/home/aqua/data -v $(pwd):/home/aqua/workspace/notebooks --name jupyter -p 8889:8889 aquabiota/notebook-r jupyter notebook --ip='*' --port=8889  --no-browser
 
 # MODIFIED FROM: https://www.digitalocean.com/community/tutorials/how-to-install-r-on-ubuntu-16-04-2
 # plus check key here: https://www.rosehosting.com/blog/install-r-on-ubuntu/
@@ -41,7 +42,3 @@ RUN chown -R $NB_USER:users /home/aqua/.local && \
 
 # default user starts the container
 USER $NB_USER
-# Create a data directory to be use as volume
-RUN mkdir $HOME/data
-# Create a data
-ENV DATA $HOME/data
