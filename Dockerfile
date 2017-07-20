@@ -21,12 +21,10 @@ RUN echo "deb http://cran.rstudio.com/bin/linux/ubuntu xenial/" | tee -a /etc/ap
 RUN apt-get update  && \
     apt-get install -y r-base r-base-dev
 
-
 USER $NB_USER
 # Create a the user R-site-library to store packages
 RUN mkdir $HOME/R-site-library/
 RUN conda install -y rpy2
-
 
 USER root
 # Install R packages
@@ -39,7 +37,8 @@ RUN /sbin/rpackages.R
 RUN chown -R $NB_USER:users $HOME/.local && \
     chown -R $NB_USER:users $HOME/R-site-library && \
     # /usr/local/lib/R/site-library
-    chown -R $NB_USER:users /usr/local/lib/R/site-library
+    chown -R $NB_USER:users /usr/local/lib/R/site-library && \
+    chown -R $NB_USER:users $WORKSPACE_DIR
 
 # default user starts the container
 USER $NB_USER
