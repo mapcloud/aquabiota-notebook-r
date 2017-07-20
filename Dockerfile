@@ -34,14 +34,10 @@ RUN chmod +x /sbin/rpackages.R
 RUN /sbin/rpackages.R
 
 # Ensure writing access to user to following dirs
-RUN chown -R $NB_USER:users /home/aqua/.local && \
+RUN chown -R $NB_USER:users $HOME.local && \
     chown -R $NB_USER:users $HOME/R-site-library && \
     # /usr/local/lib/R/site-library
     chown -R $NB_USER:users /usr/local/lib/R/site-library
 
 # default user starts the container
 USER $NB_USER
-# Create a data directory to be use as volume
-RUN mkdir $HOME/data
-# Create a data
-ENV DATA $HOME/data
