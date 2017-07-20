@@ -36,7 +36,7 @@ RUN /sbin/rpackages.R
 
 # Ensure writing access to user to following dirs
 
-RUN chown -R $NB_USER:users $HOME.local && \
+RUN chown -R $NB_USER:users $HOME/.local && \
     chown -R $NB_USER:users $HOME/R-site-library && \
     # /usr/local/lib/R/site-library
     chown -R $NB_USER:users /usr/local/lib/R/site-library
