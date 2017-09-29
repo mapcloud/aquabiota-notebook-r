@@ -50,6 +50,9 @@ install.packages("rgdal", repos='http://cran.us.r-project.org', lib = "/home/aqu
 # personal recommendation alternative to sdm,
 install.packages("dismo", repos='http://cran.us.r-project.org', lib = "/home/aqua/R-site-library/")
 
+# must to have for modelling
+install.packages("biomod2", repos='http://cran.us.r-project.org', lib = "/home/aqua/R-site-library/")
+
 # [17.07.3]  # http://www.computerworld.com/article/2921176/business-intelligence/great-r-packages-for-data-import-wrangling-visualization.html
 install.packages("remotes", repos='http://cran.us.r-project.org', lib = "/home/aqua/R-site-library/")
 install.packages("readxl", repos='http://cran.us.r-project.org', lib = "/home/aqua/R-site-library/")

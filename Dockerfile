@@ -6,7 +6,7 @@
 
 # MODIFIED FROM: https://www.digitalocean.com/community/tutorials/how-to-install-r-on-ubuntu-16-04-2
 # plus check key here: https://www.rosehosting.com/blog/install-r-on-ubuntu/
-FROM aquabiota/notebook-py2:latest
+FROM aquabiota/notebook-base:latest
 
 LABEL maintainer "Aquabiota Solutions AB <mapcloud@aquabiota.se>"
 ARG DEBIAN_FRONTEND=noninteractive
