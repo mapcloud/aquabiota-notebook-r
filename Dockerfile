@@ -37,6 +37,11 @@ RUN conda install -y -c conda-forge r-car r-psych r-mgcv r-randomforest r-rocr \
     r-raster  r-leaflet r-sqldf r-geosphere r-xml r-xml2
 # The following packages are not in r-essentials
 # RUN conda install -y -c r r-ncf r-sdmtools r-dismo r-biomod2
+RUN conda config --add channels r
+## NOT TESTED from: https://www.anaconda.com/blog/developer-blog/conda-data-science/
+# RUN conda skeleton cran biomod2
+# RUN conda build r-biomod2/
+# RUN conda install -y r-biomod2
 
 USER root
 # Install R packages
