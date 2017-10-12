@@ -35,8 +35,8 @@ RUN conda install -y -c conda-forge r-dplyr r-spatial r-jsonlite r-stringr \
     r-reshape2 r-data.table r-hmisc r-reshape r-ggthemes
 RUN conda install -y -c conda-forge r-car r-psych r-mgcv r-randomforest r-rocr \
     r-raster  r-leaflet r-sqldf r-geosphere r-xml r-xml2
-
-# RUN conda install -y -c r-ncf r-sdmtools r-dismo r-biomod2
+# The following packages are not in r-essentials
+# RUN conda install -y -c r r-ncf r-sdmtools r-dismo r-biomod2
 
 USER root
 # Install R packages
@@ -49,7 +49,7 @@ RUN apt-get update && apt-get dist-upgrade -yq && apt-get autoremove -y
 RUN chown -R $NB_USER:users $HOME/.local && \
     chown -R $NB_USER:users $HOME/R-site-library && \
     chown -R $NB_USER:users $WORKSPACE_DIR
-    
+
     # /usr/local/lib/R/site-library
     # chown -R $NB_USER:users /usr/local/lib/R/site-library && \
 
