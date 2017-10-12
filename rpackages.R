@@ -45,7 +45,7 @@ install.packages("ncf", repos='http://cran.us.r-project.org', lib = "/home/aqua/
 install.packages("SDMTools", repos='http://cran.us.r-project.org', lib = "/home/aqua/R-site-library/")
 
 # rgdal  # https://beanumber.github.io/sds192/rgdal-install.html
-install.packages("rgdal", repos='http://cran.us.r-project.org', lib = "/home/aqua/R-site-library/", type = "source")
+# install.packages("rgdal", repos='http://cran.us.r-project.org', lib = "/home/aqua/R-site-library/", type = "source")
 
 # personal recommendation alternative to sdm,
 install.packages("dismo", repos='http://cran.us.r-project.org', lib = "/home/aqua/R-site-library/")
