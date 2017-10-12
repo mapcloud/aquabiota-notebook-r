@@ -43,15 +43,16 @@ USER root
 # COPY rpackages.R /sbin/rpackages.R
 # RUN chmod +x /sbin/rpackages.R
 # RUN /sbin/rpackages.R
-
 RUN apt-get update && apt-get dist-upgrade -yq && apt-get autoremove -y
 # Ensure writing access to user to following dirs
 
 RUN chown -R $NB_USER:users $HOME/.local && \
     chown -R $NB_USER:users $HOME/R-site-library && \
+    chown -R $NB_USER:users $WORKSPACE_DIR
+    
     # /usr/local/lib/R/site-library
     # chown -R $NB_USER:users /usr/local/lib/R/site-library && \
-    chown -R $NB_USER:users $WORKSPACE_DIR
+
 
 # default user starts the container
 USER $NB_USER
